@@ -1,13 +1,20 @@
 .add-expense-card {
-    border: 2px solid black;
-    width: 300px;
     height: 200px;
-    background-color: rgb(9, 14, 43);
+    background-color: rgb(238, 109, 109);
     color: #fff;
-    border-radius: 6px;
-    margin: 20px;
-    padding: 20px;
+    border-radius: 20px;
+    padding: 10px;
     font-family:Georgia, 'Times New Roman', Times, serif;
+    input, select, button {
+        border: none;
+        &:focus {
+            border: none;
+            outline: none;
+        }
+    }
+    input {
+        color: rgb(170, 13, 13);
+    }
     .add-title {
         input {
             width: 180px;
@@ -31,7 +38,16 @@
     span {
         font-size: 20px;
     }
+    option {
+        .visible-expense-option{
+            width: 100px;
+            background: red;
+        }
+    }
     .expenseType {
+        -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
         width: 150px;
         height: 30px;
         border-radius: 4px;
@@ -39,9 +55,16 @@
         font-size: 15px;
         font-weight: 700;
         color: rgb(170, 13, 13);
+        .selected {
+            background-color: orangered;
+            color: #fff;
+        }
+        .expense-option:hover{
+            background-color: orangered !important;
+            color: #fff !important;
+        }
     }
     .add-expense-button {
-        margin-left: 10px;
         width: 80px;
         height: 25px;
         border-radius: 6px;
@@ -50,7 +73,7 @@
         cursor: pointer;
         &:disabled {
             cursor: not-allowed;
-            background-color: rgb(17, 44, 17);
+            background-color: rgb(28, 77, 28);
         }
     }
 }

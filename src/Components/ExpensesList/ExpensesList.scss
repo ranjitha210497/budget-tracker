@@ -1,0 +1,67 @@
+.accordion {
+    .accordion-item{
+        .accordion-header {
+            background-color: #fff;
+            border: 1px solid rgb(196, 26, 26);
+            width: 350px;
+            display: flex;
+            justify-content: space-between;
+            text-transform: capitalize;
+            align-items: center;
+            padding: 5px 30px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            border-radius: 20px;
+            h5 {
+                margin: 0;
+            }
+            .plus {
+                color: rgb(196, 26, 26);
+            }
+        }
+
+        .accordion-content {
+            background-color: #fff;
+            border-radius: 12px;
+            border: 15px solid rgb(242, 117, 117);
+            border-top: none;
+            border-radius: 30px;
+            padding: 10px 10px 0 10px;
+            width: 360px;
+            transition: max-height 1s ease;
+            .expense-list {
+                padding-inline-start: 0;
+            }
+            .expense-item {
+                background-color: rgb(238, 109, 109);
+                color: #fff;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                margin-bottom: 5px;
+                padding: 10px;
+                border-radius: 12px;
+                display: flex;
+                justify-content: space-around;
+                p {
+                    margin: 0;
+                }
+            }
+            .footer {
+                position: sticky;
+                background: #fff;
+                bottom: 0;
+                height: 10px;
+            }
+        }
+
+        .accordion-content.open {
+            max-height: 350px;
+            overflow-y: auto;
+        }
+        .accordion-content.closed {
+            max-height: 0;
+            height: 0;
+            padding: 0;
+            overflow: hidden;
+            border: none;
+        }
+    }
+}

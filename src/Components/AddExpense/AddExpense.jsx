@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
-import { expenseTypes } from "../../constants";
-import { capitalizeFirstLetter } from "../../helpers";
 
 import "./AddExpense.scss";
 
-const AddExpense = ({ addExpense }) => {
+const AddExpense = ({ addExpense, type }) => {
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState(0);
-  const [type, setType] = useState(expenseTypes[0]);
   const [addDisabled, setAddDisabled] = useState(true);
 
   const changeTitle = (e) => {
@@ -18,21 +15,19 @@ const AddExpense = ({ addExpense }) => {
     setAmount(e.target.value);
   };
 
-  const changeExpenseType = (e) => {
-    setType(e.target.value);
-  };
-
   useEffect(() => {
-    if (title && type && amount > 0) {
+    if (title && amount > 0) {
       setAddDisabled(false);
       console.log(false);
     } else {
       setAddDisabled(true);
     }
-  }, [title, amount, type]);
+  }, [title, amount]);
 
-  const add = () => {
+  const handleAdd = () => {
     addExpense({ title, amount, type });
+    setTitle("");
+    setAmount("");
   };
 
   return (
@@ -47,20 +42,11 @@ const AddExpense = ({ addExpense }) => {
         <input type="number" onChange={changeAmount} />
       </div>
 
-      <select
-        className="expenseType"
-        name="expenseType"
-        id="expenseType"
-        onChange={changeExpenseType}
-      >
-        {expenseTypes.map((type) => (
-          <option value={type}>{capitalizeFirstLetter(type)}</option>
-        ))}
-      </select>
+      {/* <Select options={expenseTypes} onChange={changeExpenseType} /> */}
       <button
         className="add-expense-button"
         disabled={addDisabled}
-        onClick={add}
+        onClick={handleAdd}
       >
         Add +
       </button>

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import AddExpense from './Components/AddExpense/AddExpense';
 
 import './App.css';
 import ExpensesDonut from './Components/DonutChart/DonutChart';
+import ExpensesList from './Components/ExpensesList/ExpensesList';
 
 function App() {
   const localStorage_expenses = JSON.parse(localStorage.getItem("expenses"))
@@ -32,7 +32,7 @@ function App() {
     <div className="App">
       <h1 className='header'>Budget App</h1>
       <div className='budget'>
-        <AddExpense addExpense={addExpense} />
+        <ExpensesList expenses={expenses} addExpense={addExpense} />
         <ExpensesDonut expenses={expenses} />
       </div>
     </div>

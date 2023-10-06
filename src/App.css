@@ -7,7 +7,7 @@
   }
   .budget {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     @media  screen and (max-width: 700px) {
         display: flex;
         flex-direction: column;
