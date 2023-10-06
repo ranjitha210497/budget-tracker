@@ -1,0 +1,24 @@
+.donutchart {
+    color: #fff;
+    .donutchart-innertext {
+        transform: translate(0, -60px);
+        text-transform: capitalize;
+        font-size: large;
+        font-weight: 700;
+        font-size: 20px;
+        color: rgb(61, 27, 27);
+        .donutchart-innertext-value {
+            transform: translate(0, -50px);
+        }
+    }
+    .donutchart-legend-item-label {
+        font-size: 15px;
+        font-weight: 500;
+    }
+}
+
+@media  screen and (max-width: 700px) {
+    .donutchart {
+        max-width: 350px;
+    }
+}
